@@ -1,0 +1,15 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>&lt;meta name=&quot;viewport&quot; content=&quot;width=device--width, initial-scale=1.0&quot;&gt;</p>
+<p>&lt;!-- HTML5 shim for IE backwards compatibility --&gt; </p>
+<p>&lt;!--[if lt IE 9]&gt;</p>
+<p>&lt;script src=&quot;http://html5shim.googlecode.com/svn/trun/html5.js&quot;&gt;&lt;/script&gt;</p>
+<p>&lt;![endif]--&gt;</p>
+</body>
+</html>
