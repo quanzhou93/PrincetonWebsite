@@ -1,3 +1,7 @@
-.darkBG{
-	background: #999;
+body {
+     margin: 0;
+     background-image: url('sky.jpg');
+     /*background-size: 1440px 800px;*/
+     background-repeat:no-repeat;
+    display: compact;
 }
