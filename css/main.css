@@ -1,0 +1,15 @@
+.darkBG {
+	background: #f8f8f8;
+}
+
+footer {
+	bottom: 0;
+}
+
+#wrap {min-height: 80%;}
+
+#main {
+  overflow:auto;
+  padding-bottom:42%; /* this needs to be bigger than footer height*/
+}
+
