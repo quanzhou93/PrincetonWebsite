@@ -13,6 +13,5 @@ footer {
   padding-bottom:42%; /* this needs to be bigger than footer height*/
 }
 
-.img-rescale {
-	width: 75%;
+.intro-header {
 }
