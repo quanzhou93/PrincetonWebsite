@@ -8,10 +8,23 @@ footer {
 
 #wrap {min-height: 80%;}
 
-#main {
+#vspace {
   overflow:auto;
-  padding-bottom:42%; /* this needs to be bigger than footer height*/
+  padding-bottom:5%; /* this needs to be bigger than footer height*/
 }
 
-.intro-header {
+.section-footing-spacer {
+  border-top: 3px solid #e7e7e7;
+  width: 300px;
+  float: left;
+}
+
+/* Makes sure that page header is spaced right*/
+.page-header {
+	margin-top: 70px;
+}
+
+.ppad {
+	padding-right:3%;
+	padding-left:1%;
 }
