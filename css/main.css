@@ -48,7 +48,9 @@ footer {
 
 
 /* Global Page properties */
-
+.commandp-img-pad{
+	padding-top: 40px;
+}
 
 #vspace {
 	overflow:auto;
