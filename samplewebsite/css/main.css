@@ -1,0 +1,24 @@
+.ipad {
+	margin: 10px;
+}
+
+.ppad {
+	margin: 10px;
+	margin-left: 15px;
+}
+
+.interest_img {
+	margin-top: 10%;
+	width:80%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.resume_img {
+	width:75%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
