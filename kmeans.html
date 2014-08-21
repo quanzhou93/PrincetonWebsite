@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Build Something</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Google Web Font -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Add custom CSS here -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/main.css"         rel="stylesheet">
+
+</head>
+
+
+<body>
+    <div class="wrap">
+      <div id="main" class="container">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"> <span class="glyphicon glyphicon-home"></span> </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="about.html">About</a>
+                        </li>
+                        <li><a href="resume.html">Resume</a>
+                        </li>
+                        <li><a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+    </div>
+
+    <!----------------------------------------------- /.intro-header ------------------------------------------>
+
+    <div class="row default-banner">
+        <div>
+            <div class="container">
+                <div class="page-header">
+                  <h1> K-means <small> Clustering Algorithm</small></h1>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div>
+    <div class="container">
+
+
+        <div class="content-section-a">
+            <div class="container">
+                <div class="row">
+                    <div  class="col-xs-12">
+                        <div class="ppad">
+                            <h4> Introduction to K-means </h4>
+                            <ol>
+                                K-means is the most basic (and one of the fastest) clustering algorithms.
+                                <li> The program begins by dropping <em>k cluster centers</em> that are randomly dropped into the plane. </li>
+                                <li>  In the first step of the iterative process, the algorithm creates a temporary cluster by assigning every point the closest "cluster centers."</li>
+                                <li> The second step of the iterative process holds all the points and their labeled clusters constant and moves each cluster center to the center of mass of the clusters.</li>
+                                <li> The program ends when each cluster center no longer moves, or moves an insignificant amount. </li>
+                                  </ol>
+
+                                The "K" in its name refers to the number of clusters, <em> k </em> the algorithm will yield. The "means" refers to the method in which the clusters are 
+                            <p class="ppad"> </p>
+                            <h4>Can Kmeans Produce a "Human" Output?</h4>
+                            <p class="ppad"> To show an application of K-means,  let's look at a clustering of the population of the United States. If the cluster of lights should correspond to the population distribution of the United States, then it  would be interesting to see if K-means would cluster the United States the same way a human would. Some questions we can ask are:
+                                <ul>
+                                    <li> Can K-means can pick out large region such as?
+                                        <ul>
+                                            <li> New England </li>
+                                            <li> Mid-Atlantic </li>
+                                            <li> West Coast </li>
+                                            <li> The South </li>
+                                            <li> And so forth. </li>
+                                        </ul>
+
+                                        <!--  "New England", "West Coast", Southwest", and the "Mid-west." </li> -->
+                                        <li> Can K-means pick out smaller regions such as? </li>
+                                        <ul>
+                                            <li> NY tri-state area </li>
+                                            <li> California Bay Area </li>
+                                            <li> Sprawling Cities like Dallas</li>
+                                        </ul>
+
+                                    </ul> </p>
+                                    Let's see which values of K-means wll yield the results we're looking for. 
+
+                                    <h4> Data Processing </h4>
+                                    <p class="ppad"> Starting with a google search for "US at night", I found a nice 9MB satellite image. With some basic image processing, I stripped away the colors of this image and calculate the location of each light pixel. Since the data is so large (almost 1 billion pixels of light), I chose a very small sample (0.01%) of the data to represent the US. Bright areas have high chances of yielding light pixels while darker areas have small chances of yielding light pixels.  </p>
+                                    <div  class="col-sm-6">
+                                        <figure>
+                                            <img class="img-responsive img-rescale" src="img/clustering/USnight_raw.jpg" alt="">
+                                            <figcaption>Original data (courtesy of nasa.gov) </figcaption>
+                                        </div>
+                                    </figure>
+                                    <div  class="col-sm-6">
+                                        <figure>
+                                            <img class="img-responsive img-rescale" src="img/clustering/US_processed.jpg" alt="">
+                                            <figcaption> Preprocessed data,  0.01% representation of total points </figcaption>
+
+                                        </div>
+                                    </figure>
+                                    <h4> Methdology </h4>
+                                    <p class="ppad">
+                                        I found a nice set of clustering algorithms from <a target="_blank" href="http://scikit-learn.org/stable/modules/clustering.html#clustering"> Scikit.org </a>. In addition to <a target="_blank" href="http://scikit-learn.org/stable/modules/clustering.html#k-means">K-means </a> they also provide packages for <a target="_blank" href="http://scikit-learn.org/stable/modules/mixture.html#mixture"> Gaussian Mixtures </a>(a more accurate formulation of the problem), <a target="_blank" href="http://scikit-learn.org/stable/modules/clustering.html#mini-batch-kmeans">Mini-batch K-means </a> (a faster algorithm at the cost of slight inacuracy), and<a target="_blank" href="http://scikit-learn.org/stable/modules/clustering.html#affinity-propagation"> Affinity Propogation </a> (strong for numerous, uneven clusters). 
+                                    </p>
+
+                                    <p class="ppad">
+                                        K-means is a fast algorithm with low memory constraints. My laptop yields a converged simulation in about ~10 seconds on four 2.6 Ghz i7 processors.  
+                                    </p>
+
+                                    <h4> Results </h4>
+                                    <h4> Discussion </h4>
+                                    <h4> Limitations </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>      
+                    <!-- /.container -->
+                </div>
+
+            </div>
+
+
+        </div>
+        <!-- /.content-section-a -->
+    </div>
+    <!-- /.content-section-b -->
+
+
+
+    <footer>
+        <div class="container">
+            <hr class="section-footing-spacer">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li><a href="index.html">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="about.html">About</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="#services">Services</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li><a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Quan Zhou 2014. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+</body>
+
+</html>
